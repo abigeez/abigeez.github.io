@@ -6,7 +6,7 @@ const Weather = () => {
     <div className="weatherOne">
        <div className="searchBar">
         <input type='text' placeholder='Search'/>
-        <img src={search_icon} alt="" /> 
+        <img className="magGlass"src={search_icon} alt="" /> 
        </div>
     </div>
 
