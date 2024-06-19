@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing:border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .app{
   min-height: 100vh;
   display: grid;
-background: rgb(27,89,198);
+background: #1b59c6;
 background: linear-gradient(0deg, rgba(27,89,198,0.9783549783549783) 0%, rgba(101,165,246,0.6363636363636364) 100%);
 
  }
