@@ -18,7 +18,7 @@
 
 .searchBar input{
     height: 36px;
-    border:solid 2px rgb(29, 29, 29);
+    
     outline: none;
     border-radius:35px;
     padding-left:25px;
@@ -29,7 +29,7 @@
 .magGlass{
     padding:5px;
     height: 40px;
-    border:solid 2px rgb(29, 29, 29);
+   
     border-radius:50%;
     background: whitesmoke;
     cursor:pointer;
@@ -39,4 +39,15 @@
     width:175px;
     height:175px;
     margin: 29px 0;
+}
+
+.temp{
+    color:rgb(243, 245, 237);
+    font-size:54px;
+    margin-bottom:13px;
+}
+
+.city{
+    color:rgb(243, 245, 237);
+    font-size:24px;
 }
