@@ -7,6 +7,8 @@
 .app{
   min-height: 100vh;
   display: grid;
-  background: rgb(34,164,195);
-background: linear-gradient(0deg, rgba(34,164,195,0.9783549783549783) 0%, rgba(45,137,253,0.6255411255411256) 100%);
-}
+background: rgb(27,89,198);
+background: linear-gradient(0deg, rgba(27,89,198,0.9783549783549783) 0%, rgba(101,165,246,0.6363636363636364) 100%);
+
+ }
+  
