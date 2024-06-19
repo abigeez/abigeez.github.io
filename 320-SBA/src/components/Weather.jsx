@@ -17,8 +17,8 @@ const Weather = () => {
         <img className="magGlass" src={search_icon} alt="" />
       </div>
     <img className="weather-icon" src={sun_icon} alt=""/>
-      <p>70°F</p>
-      <p>Madrid</p>
+      <p className="temp">70°F</p>
+      <p className="city">Madrid</p>
     </div>
 
   )
