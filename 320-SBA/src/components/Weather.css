@@ -1,6 +1,17 @@
 .weatherOne{
     place-self: center;
-    padding: 40px;
-    border-radius: 8px;
-    background-image: linear-gradient(-45deg, rgba(22,75,167,0.6601731601731602) 0%, rgba(5,42,108,1) 100%)
+    padding: 50px;
+    border: 5px double white;
+    border-radius: 9.5px;
+    background-image: linear-gradient(-45deg, rgba(22,75,167,0.6601731601731602) 0%, rgba(5,42,108,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.searchBar{
+    display:flex;
+    align-items:center;
+    gap: 11px;
 }
