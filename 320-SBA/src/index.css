@@ -3,3 +3,10 @@
   padding: 0;
   box-sizing:border-box;
 }
+
+.app{
+  min-height: 100vh;
+  display: grid;
+  background: rgb(34,164,195);
+background: linear-gradient(0deg, rgba(34,164,195,0.9783549783549783) 0%, rgba(45,137,253,0.6255411255411256) 100%);
+}
