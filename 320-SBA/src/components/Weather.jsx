@@ -36,7 +36,7 @@ const Weather = () => {
     "50n": humid_icon
   };
   const searchAPI = async (city) => {
-    if (city === ""){
+    if (city === "") {
       alert("Please Enter City Name")
       return;
     }
@@ -55,6 +55,8 @@ const Weather = () => {
 
       })
     } catch (error) {
+      setapiData(false);
+      console.log("Error, weather data not fetched");
     }
   }
   useEffect(() => {
@@ -67,28 +69,28 @@ const Weather = () => {
         <input ref={inputRef} type='text' placeholder='Search' />
         <img className="magGlass" src={search_icon} alt="" onClick={() => searchAPI(inputRef.current.value)} />
       </div>
-      {apiData?<>
+      {apiData ? <>
         <img className="weather-icon" src={apiData.icon} alt="" />
-      <p className="temp">{apiData.temperature}°F</p>
-      <p className="city">{apiData.location}</p>
-      <div className='weathData'>
-        <div className='col'>
-          <img src={humid_icon} alt="" height={30} width={30} />
-          <div>
-            <p>{apiData.humidity} %</p>
-            <span>Humidity</span>
+        <p className="temp">{apiData.temperature}°F</p>
+        <p className="city">{apiData.location}</p>
+        <div className='weathData'>
+          <div className='col'>
+            <img src={humid_icon} alt="" height={30} width={30} />
+            <div>
+              <p>{apiData.humidity} %</p>
+              <span>Humidity</span>
+            </div>
+          </div>
+          <div className='col'>
+            <img src={wind_icon} alt="" height={30} width={30} />
+            <div>
+              <p>{apiData.windSpeed} km/h</p>
+              <span>Wind Speed</span>
+            </div>
           </div>
         </div>
-        <div className='col'>
-          <img src={wind_icon} alt="" height={30} width={30} />
-          <div>
-            <p>{apiData.windSpeed} km/h</p>
-            <span>Wind Speed</span>
-          </div>
-        </div>
-      </div>
-      </>:<></>}
-      
+      </> : <></>}
+
     </div>
 
   )
