@@ -61,7 +61,7 @@ const Weather = () => {
     <div className="weatherOne">
       <div className="searchBar">
         <input ref={inputRef} type='text' placeholder='Search' />
-        <img className="magGlass" src={search_icon} alt="" />
+        <img className="magGlass" src={search_icon} alt="" onClick={()=>searchAPI(inputRef.current.value)}/>
       </div>
       <img className="weather-icon" src={apiData.icon} alt="" />
       <p className="temp">{apiData.temperature}°F</p>
