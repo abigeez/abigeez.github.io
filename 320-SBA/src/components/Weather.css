@@ -62,7 +62,16 @@
 }
 .weathData p {
     color:white;
+    margin-bottom: 5px;
 }
 .weathData span{
     color:white;
+} 
+
+.weathData .col{
+    display:flex;
+    align-items: flex-start;
+    gap:16px;
+  
+
 }
