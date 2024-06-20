@@ -44,8 +44,13 @@ const Weather = () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_WEATHER_ID}`;
       const response = await fetch(url);
       const data = await response.json();
+      if(!response.ok){
+        alert(data.message);
+        return;
+      }
       console.log(data);
       const icon = weatherIcons[data.weather[0].icon || sun_icon]
+       
       setapiData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
