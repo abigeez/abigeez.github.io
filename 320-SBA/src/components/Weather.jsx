@@ -45,9 +45,9 @@ const Weather = () => {
         setapiData({
           humidity: data.main.humidity,
           windSpeed: data.wind.speed,
-          temperatrue: Math.floor(data.main.temp),
+          temperature: Math.floor(data.main.temp),
           location: data.name,
-          icon: data
+          icon: icon
 
         })
       } catch (error) {
@@ -64,7 +64,7 @@ const Weather = () => {
         <img className="magGlass" src={search_icon} alt="" />
       </div>
       <img className="weather-icon" src={sun_icon} alt="" />
-      <p className="temp">70°F</p>
+      <p className="temp">{apiData.temperature}</p>
       <p className="city">Madrid</p>
       <div className='weathData'>
         <div className='col'>
