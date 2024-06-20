@@ -4,7 +4,6 @@ import search_icon from '../assets/mgGlass.png'
 import light_rain from '../assets/lightrain.png'
 import partly_cloudly from '../assets/partlyCloudly.png'
 import snow_fall from '../assets/snowfall.png'
-import snow_flake from '../assets/snowflake.png'
 import rain_shower from '../assets/rainShowers.png'
 import storm_icon from '../assets/storm.png'
 import sun_icon from '../assets/sun.png'
@@ -29,23 +28,26 @@ const Weather = () => {
       "09n": light_rain,
       "10d": rain_shower,
       "10n": rain_shower,
-      
-      
-      
-
-    }
+      "11d": storm_icon,
+      "11n": storm_icon,
+      "13d": snow_fall,
+      "13d": snow_fall,
+      "50d": humid_icon,
+      "50n": humid_icon
+    };
   const searchAPI = async (city) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_WEATHER_ID}`;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
+        const icon = weatherIcons[data.weather[0].icon|| sun_icon]
         setapiData({
           humidity: data.main.humidity,
           windSpeed: data.wind.speed,
           temperatrue: Math.floor(data.main.temp),
           location: data.name,
-          icon:
+          icon: data.icon
 
         })
       } catch (error) {
