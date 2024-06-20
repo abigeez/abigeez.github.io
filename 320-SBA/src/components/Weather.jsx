@@ -13,12 +13,14 @@ import humid_icon from '../assets/humidityIcon.png'
 
 const Weather = () => {
 
-      const searchAPI = async() =>{
-        try{
-
-        }catch(error) {
-      }
+  const searchAPI = async (city) => {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_WEATHER_ID}`;
+        const response = await fetch(url);
+        const data = await response.json();
+      } catch (error) {
     }
+  }
   return (
     <div className="weatherOne">
       <div className="searchBar">
@@ -41,8 +43,8 @@ const Weather = () => {
           <div>
             <p>4.2 km/h </p>
             <span>Wind Speed</span>
-          </div> 
-          </div>       
+          </div>
+        </div>
       </div>
     </div>
 
