@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Weather.css'
 import search_icon from '../assets/mgGlass.png'
 import light_rain from '../assets/lightrain.png'
@@ -22,6 +22,10 @@ const Weather = () => {
       } catch (error) {
     }
   }
+  useEffect(() => {
+    searchAPI("Madrid")
+
+  },[])
   return (
     <div className="weatherOne">
       <div className="searchBar">
