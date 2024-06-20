@@ -54,7 +54,7 @@ const Weather = () => {
     }
   }
   useEffect(() => {
-    searchAPI("Madrid")
+    searchAPI("Charlotte")
 
   },[])
   return (
@@ -63,7 +63,7 @@ const Weather = () => {
         <input type='text' placeholder='Search' />
         <img className="magGlass" src={search_icon} alt="" />
       </div>
-      <img className="weather-icon" src={sun_icon} alt="" />
+      <img className="weather-icon" src={apiData.icon} alt="" />
       <p className="temp">{apiData.temperature}°F</p>
       <p className="city">{apiData.location}</p>
       <div className='weathData'>
