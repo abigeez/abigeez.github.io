@@ -18,7 +18,7 @@ const Weather = () => {
 
   const searchAPI = async (city) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=eaa170d0202a3df084b6117bc8ccb889`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
