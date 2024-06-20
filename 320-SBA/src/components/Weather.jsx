@@ -12,6 +12,13 @@ import wind_icon from '../assets/windSymbol.png'
 import humid_icon from '../assets/humidityIcon.png'
 
 const Weather = () => {
+
+      const searchAPI = async() =>{
+        try{
+
+        }catch(error) {
+      }
+    }
   return (
     <div className="weatherOne">
       <div className="searchBar">
