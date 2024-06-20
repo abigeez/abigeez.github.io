@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Weather.css'
 import search_icon from '../assets/mgGlass.png'
 import light_rain from '../assets/lightrain.png'
@@ -11,14 +11,23 @@ import sun_icon from '../assets/sun.png'
 import wind_icon from '../assets/windSymbol.png'
 import humid_icon from '../assets/humidityIcon.png'
 
+
 const Weather = () => {
+
+    const [apiData, setapiData] = useState(false);
 
   const searchAPI = async (city) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=eaa170d0202a3df084b6117bc8ccb889`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=eaa170d0202a3df084b6117bc8ccb889`;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
+        setapiData({
+          humidity: data.main.humidity,
+          windSpeed: data.wind.speed,
+          temperatrue: Math.floor(data.main.temp)
+
+        })
       } catch (error) {
     }
   }
