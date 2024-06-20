@@ -16,6 +16,24 @@ const Weather = () => {
 
     const [apiData, setapiData] = useState(false);
 
+    const weatherIcons = {
+      "01d": sun_icon,
+      "01n": sun_icon,
+      "02d": partly_cloudly,
+      "02n": partly_cloudly,
+      "03d": partly_cloudly,
+      "03n": partly_cloudly,
+      "04d": partly_cloudly,
+      "04n": partly_cloudly,
+      "09d": light_rain,
+      "09n": light_rain,
+      "10d": rain_shower,
+      "10n": rain_shower,
+      
+      
+      
+
+    }
   const searchAPI = async (city) => {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=;
@@ -25,7 +43,9 @@ const Weather = () => {
         setapiData({
           humidity: data.main.humidity,
           windSpeed: data.wind.speed,
-          temperatrue: Math.floor(data.main.temp)
+          temperatrue: Math.floor(data.main.temp),
+          location: data.name,
+          icon:
 
         })
       } catch (error) {
