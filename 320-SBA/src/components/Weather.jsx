@@ -64,20 +64,20 @@ const Weather = () => {
         <img className="magGlass" src={search_icon} alt="" />
       </div>
       <img className="weather-icon" src={sun_icon} alt="" />
-      <p className="temp">{apiData.temperature}</p>
-      <p className="city">Madrid</p>
+      <p className="temp">{apiData.temperature}°F</p>
+      <p className="city">{apiData.location}</p>
       <div className='weathData'>
         <div className='col'>
           <img src={humid_icon} alt="" height={30} width={30} />
           <div>
-            <p>60 %</p>
+            <p>{apiData.humidity} %</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className='col'>
           <img src={wind_icon} alt="" height={30} width={30} />
           <div>
-            <p>4.2 km/h </p>
+            <p>{apiData.windSpeed} km/h</p>
             <span>Wind Speed</span>
           </div>
         </div>
