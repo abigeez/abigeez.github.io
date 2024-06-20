@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Weather.css'
 import search_icon from '../assets/mgGlass.png'
 import light_rain from '../assets/lightrain.png'
@@ -12,55 +12,55 @@ import humid_icon from '../assets/humidityIcon.png'
 
 
 const Weather = () => {
+  const inputRef = useRef();
+  const [apiData, setapiData] = useState(false);
 
-    const [apiData, setapiData] = useState(false);
-
-    const weatherIcons = {
-      "01d": sun_icon,
-      "01n": sun_icon,
-      "02d": partly_cloudly,
-      "02n": partly_cloudly,
-      "03d": partly_cloudly,
-      "03n": partly_cloudly,
-      "04d": partly_cloudly,
-      "04n": partly_cloudly,
-      "09d": light_rain,
-      "09n": light_rain,
-      "10d": rain_shower,
-      "10n": rain_shower,
-      "11d": storm_icon,
-      "11n": storm_icon,
-      "13d": snow_fall,
-      "13d": snow_fall,
-      "50d": humid_icon,
-      "50n": humid_icon
-    };
+  const weatherIcons = {
+    "01d": sun_icon,
+    "01n": sun_icon,
+    "02d": partly_cloudly,
+    "02n": partly_cloudly,
+    "03d": partly_cloudly,
+    "03n": partly_cloudly,
+    "04d": partly_cloudly,
+    "04n": partly_cloudly,
+    "09d": light_rain,
+    "09n": light_rain,
+    "10d": rain_shower,
+    "10n": rain_shower,
+    "11d": storm_icon,
+    "11n": storm_icon,
+    "13d": snow_fall,
+    "13d": snow_fall,
+    "50d": humid_icon,
+    "50n": humid_icon
+  };
   const searchAPI = async (city) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_WEATHER_ID}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        const icon = weatherIcons[data.weather[0].icon|| sun_icon]
-        setapiData({
-          humidity: data.main.humidity,
-          windSpeed: data.wind.speed,
-          temperature: Math.floor(data.main.temp),
-          location: data.name,
-          icon: icon
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_WEATHER_ID}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      const icon = weatherIcons[data.weather[0].icon || sun_icon]
+      setapiData({
+        humidity: data.main.humidity,
+        windSpeed: data.wind.speed,
+        temperature: Math.floor(data.main.temp),
+        location: data.name,
+        icon: icon
 
-        })
-      } catch (error) {
+      })
+    } catch (error) {
     }
   }
   useEffect(() => {
     searchAPI("Charlotte")
 
-  },[])
+  }, [])
   return (
     <div className="weatherOne">
       <div className="searchBar">
-        <input type='text' placeholder='Search' />
+        <input ref={inputRef} type='text' placeholder='Search' />
         <img className="magGlass" src={search_icon} alt="" />
       </div>
       <img className="weather-icon" src={apiData.icon} alt="" />
