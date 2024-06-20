@@ -36,6 +36,10 @@ const Weather = () => {
     "50n": humid_icon
   };
   const searchAPI = async (city) => {
+    if (city === ""){
+      alert("Please Enter City Name")
+      return;
+    }
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${import.meta.env.VITE_WEATHER_ID}`;
       const response = await fetch(url);
@@ -61,7 +65,7 @@ const Weather = () => {
     <div className="weatherOne">
       <div className="searchBar">
         <input ref={inputRef} type='text' placeholder='Search' />
-        <img className="magGlass" src={search_icon} alt="" onClick={()=>searchAPI(inputRef.current.value)}/>
+        <img className="magGlass" src={search_icon} alt="" onClick={() => searchAPI(inputRef.current.value)} />
       </div>
       <img className="weather-icon" src={apiData.icon} alt="" />
       <p className="temp">{apiData.temperature}°F</p>
