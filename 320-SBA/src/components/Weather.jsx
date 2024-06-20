@@ -18,13 +18,24 @@ const Weather = () => {
         <input type='text' placeholder='Search' />
         <img className="magGlass" src={search_icon} alt="" />
       </div>
-    <img className="weather-icon" src={sun_icon} alt=""/>
+      <img className="weather-icon" src={sun_icon} alt="" />
       <p className="temp">70°F</p>
       <p className="city">Madrid</p>
       <div className='weathData'>
         <div className='col'>
-          <img src="" alt="" />
+          <img src={humid_icon} alt="" height={30} width={30} />
+          <div>
+            <p>60 %</p>
+            <span>Humidity</span>
+          </div>
         </div>
+        <div className='col'>
+          <img src={wind_icon} alt="" height={30} width={30} />
+          <div>
+            <p>4.2 km/h </p>
+            <span>Wind Speed</span>
+          </div> 
+          </div>       
       </div>
     </div>
 
