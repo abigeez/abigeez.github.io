@@ -8,6 +8,8 @@ import snow_flake from '../assets/snowflake.png'
 import rain_shower from '../assets/rainShowers.png'
 import storm_icon from '../assets/storm.png'
 import sun_icon from '../assets/sun.png'
+import wind_icon from '../assets/windSymbol.png'
+import humid_icon from '../assets/humidityIcon.png'
 
 const Weather = () => {
   return (
@@ -19,6 +21,11 @@ const Weather = () => {
     <img className="weather-icon" src={sun_icon} alt=""/>
       <p className="temp">70°F</p>
       <p className="city">Madrid</p>
+      <div className='weathData'>
+        <div className='col'>
+          <img src="" alt="" />
+        </div>
+      </div>
     </div>
 
   )
