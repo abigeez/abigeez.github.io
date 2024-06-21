@@ -7,9 +7,9 @@ I used AJAX to link to an external API to retrieve live, current data that was d
 Lastly, I used error handling functions such as try and catch, fragments to store what UI appears dependent on what request is input into the search bar, if statements for possible errors such as misspelled cities or no entry at all. 
 
 Usage instructions:
-Type in city in search bar to fetch live data about the weather conditions. Use search icon to submit. Attempt typing in a blank ("") and see what error message pops up. As well attempt to enter a city that doesn't exist or misspell a city to see what error message will pop up. Try to change to different cities that may have different weather conditions such as rainy weather like in a rainforest or a desert like in Phoenix and see what different icons and data pop up as relative to that information.
+Type in any city in search bar to fetch live data about the weather conditions. Use search icon to submit. Attempt typing in a blank ("") and see what error message pops up. As well attempt to enter a city that doesn't exist or misspell a city to see what error message will pop up. Try to change to different cities that may have different weather conditions such as rainy weather like in a rainforest or a desert like in Phoenix and see what different icons and data pop up as relative to that information.
 
 
-github pages link: https://abigeez.github.io
+deploy link: https://golden-unicorn-285935.netlify.app/
 
 
