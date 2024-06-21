@@ -10,4 +10,6 @@ Usage instructions:
 Type in city in search bar to fetch live data about the weather conditions. Use search icon to submit. Attempt typing in a blank ("") and see what error message pops up. As well attempt to enter a city that doesn't exist or misspell a city to see what error message will pop up. Try to change to different cities that may have different weather conditions such as rainy weather like in a rainforest or a desert like in Phoenix and see what different icons and data pop up as relative to that information.
 
 
+github pages link: https://abigeez.github.io
+
 
